@@ -1,0 +1,145 @@
+@font-face {
+    font-family: Hack;
+    src: url("/fonts/Hack-Regular.ttf");
+}
+@font-face {
+    font-family: Troubleside;
+    src: url("/fonts/Troubleside.ttf");
+}
+
+@font-face {
+    font-family: Icons;
+    src: url("/fonts/icons.ttf");
+}
+
+
+body {
+    margin: 0;
+    background: linear-gradient(#fff, #ccc);
+}
+
+.workspace {
+    margin-left: 260px;
+}
+
+header {
+    height: 40px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    font-family: Troubleside, sans-serif;
+    font-size: 20px;
+}
+
+.header_element {
+    font-family: Icons, Troubleside, sans-serif;
+    margin-left: 10px;
+}
+.header_element:hover {color: #555;}
+.notification {display: flex;}
+.menu-button {display: none;}
+
+
+#notification_menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    margin: -20px 0 0 calc(100vw - 645px);
+    border: 1px solid #eee;
+    width: 360px;
+    min-height: 40px;
+    padding: 5px;
+    z-index: 999;
+}
+
+.notification_element {
+    background-color: grey;
+    min-height: 40px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-family: Troubleside, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.notification_successful {
+    background-color: green;
+}
+
+.notification_error {
+    background-color: darkred;
+}
+
+.notification_description {
+    font-size: 7px;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    color: #aaa;
+    font-family: Troubleside, sans-serif;
+    font-size: 15px;
+    display: flex;
+    margin: auto;
+}
+
+footer span {
+    margin: auto 10px;
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #555;
+}
+
+
+@media screen and (max-width: 800px) {
+    .workspace {
+        margin-left: 0;
+    }
+
+    #notification_menu {
+        margin: -20px 0 0 0;
+        width: calc(100vw - 12px);
+    }
+
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-button span {
+        width: 20px;
+        height: 2px;
+        background: #999;
+        margin-top: 3px;
+    }
+    .menu-button input {
+        position: absolute;
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        z-index: 1;
+    }
+    .menu-button input:hover ~ span {
+        background: #555;
+    }
+    .menu-button input:checked ~ .menu-button-1 {
+        transform: translate(5px) scaleX(50%);
+    }
+    .menu-button input:checked ~ .menu-button-3 {
+        transform: translate(5px) scaleX(50%);
+    }
+}

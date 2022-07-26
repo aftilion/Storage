@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<% title = 'Склад ИС'; links=['/css/mail.css', '/css/inputfile.css']%>
+<% if (mails === undefined) mails = []%>
+<%- include('../templates/head');%>
+<body>
+<%- include('../templates/aside')%>
+<div class="workspace">
+    <%- include('../templates/nav')%>
+    <main>
+        <form class="mail-workspace" method="post" action="/mail" enctype="multipart/form-data">
+            <img class="mail-container-background">
+            <div class="mail-choose">
+                <div class="chosen-mail" id="mail-div">
+                        <% if (mails.length > 0) {%>
+                        <select name="mail"><option value="<%=mails[0].id%>"></option></select>
+                            <div class="mail-div">
+                                <div class="mail-name"><%= mails[0].name%></div>
+                                <div class="mail-mail"><%= mails[0].mail%></div>
+                            </div>
+                        <%}%>
+                        <div class="choose-button">
+                            <input name="checkbox" type="checkbox" class="button-span-input" onchange="clickDrop(this)">
+                            <span class="button-span"></span>
+                            <span class="button-span"></span>
+                        </div>
+                </div>
+                <ul class="mail-drop" id="mail-drop">
+                    <% mails.forEach(mail => {%>
+                        <li>
+                            <div class="mail-div" onclick="clickChoose(this)" value="<%=mail.id%>">
+                                <div class="mail-name"><%=mail.name%></div>
+                                <div class="mail-mail"><%=mail.mail%></div>
+                            </div>
+                        </li>
+                    <%})%>
+                </ul>
+            </div>
+            <input name="subject" placeholder="Тема письма:" class="mail-input">
+            <textarea name="mailText" placeholder="Письмо:" class="mail-input mail-area" onkeydown="textareaResize(this)"></textarea>
+            <input type="file" name="file" id="file" class="inputfile"/>
+            <label for="file"><span class="icon-container">&#xf1c3;</span><span id="file-text">Загрузить файл&hellip;</span></label>
+            <button class="mail-input mail-button">Отправить</button>
+            <%if (typeof(message) != 'undefined') {%>
+                <div class="result-div"><%= message%></div>
+            <%console.log(message);}%>
+            <script src="/js/custom-file-input.js"></script>
+        </form>
+    </main>
+    <%- include('../templates/footer')%>
+</div>
+<script src="/js/mail-drop.js"></script>
+</body>
+</html>

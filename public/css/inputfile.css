@@ -1,0 +1,31 @@
+.inputfile {
+    display: none;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.inputfile + label {
+    font-size: 20px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--main);
+    border: 2px solid var(--main);
+}
+
+
+.inputfile + label svg {
+    vertical-align: middle;
+    fill: var(--main);
+    margin-top: -4px;
+    margin-right: 4px;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label,
+.inputfile + label:hover {
+    color: var(--active);
+}

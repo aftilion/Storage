@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<% title = 'Склад ИС: Список пользователей'; links=['/css/table.css', '/css/inputs.css']%>
+<%- include('../templates/head');%>
+<body>
+<%- include('../templates/aside')%>
+<div class="workspace">
+    <%- include('../templates/nav')%>
+    <main>
+        <%- include('../tables/links')%>
+        <%- include('../tables/users')%>
+    </main>
+    <%- include('../templates/footer')%>
+</div>
+<script src="/js/users_remove.js"></script>
+</body>
+</html>

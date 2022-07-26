@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Icons;
+    src: url("/fonts/icons.ttf");
+}
+
+@font-face {
+    font-family: Philosopher;
+    src: url("/fonts/Pholosopher-Regular.ttf");
+    font-weight: normal;
+}
+
+.icon-container {
+    font-family: Icons, serif;
+    font-size: 25px;
+}
+
+.beaut-input {
+    width: 88%;
+    margin: 5px 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    height: 30px;
+    font-family: Philosopher sans-serif;
+    font-size: 20px;
+}
+
+.beaut-input:focus {
+    border-bottom: 1px solid var(--main);
+}
+
+.beaut-button {
+    margin: 10px;
+    background: transparent;
+    border: none;
+    font-family: Philosopher sans-serif;
+    font-size: 20px;
+    outline: none;
+}
+.beaut-button:hover,.beaut-button:focus {
+    color: var(--main);
+}

@@ -1,0 +1,84 @@
+.aside__main {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background: var(--back);
+    float: left;
+    box-shadow: 0 0 10px gray;
+}
+
+.main-logo {
+    display: flex;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+    color: var(--main);
+    text-decoration: none;
+    font-family: Hack, sans-serif;
+    font-size: 30px;
+}
+.main-logo:hover {
+    color: var(--active);
+}
+.main-logo img {
+    height: 40px;
+    margin: 0 10px 10px;
+}
+
+.icons {
+    font-family: Icons, sans-serif;
+}
+
+.menu_group {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_group > .menu_element:after {
+    margin: 20px;
+    font-family: Icons, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    content: '';
+}
+
+.menu_group > .menu_element:after:hover {
+    color: #cccccc;
+}
+
+.menu_group > .menu_element.show:after {
+    content: '';
+}
+
+.menu_group li {
+    display: none;
+}
+
+.showen li {
+    display: block;
+}
+
+.menu_group li {
+    padding-left: 40px;
+}
+
+.menu_element {
+    margin: 0 20px;
+    font-family: Troubleside, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu_element:hover {
+    color: #cccccc;
+}
+
+@media screen and (max-width: 800px) {
+    .aside__main {
+        display: none;
+    }
+}

@@ -1,0 +1,122 @@
+.mail-workspace {
+    margin: 10px 50px 0;
+    padding: 1px;
+    background: white;
+    box-shadow: 0 0 5px grey;
+    border-radius: 15px;
+}
+
+.mail-choose {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.chosen-mail select {
+    display: none;
+}
+.chosen-mail {
+    display: flex;
+    margin: 0 auto 0 30px;
+    border-bottom: 2px solid grey;
+}
+
+.mail-div {
+    padding: 5px;
+}
+
+.mail-name {
+    font-size: 20px;
+    color: #666;
+    font-weight: bold;
+}
+
+.mail-mail {
+    font-size: 13px;
+    color: #888;
+}
+
+.choose-button {
+    margin: auto 0;
+    display: flex;
+}
+
+.button-span {
+    height: 20px;
+    width: 2px;
+    margin: auto;
+    background: grey;
+}
+
+.button-span-input {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.button-span:nth-child(2) {
+    transform: translate(-26px, 0) rotate(-45deg);
+}
+.button-span:last-child {
+    transform: translate(-14px, 0) rotate(45deg);
+}
+.button-span-input:checked ~ .button-span:nth-child(2) {
+    transform: translate(-26px, 0) rotate(45deg);
+}
+.button-span-input:checked ~ .button-span:last-child {
+    transform: translate(-14px, 0) rotate(-45deg);
+}
+
+.mail-drop {
+    box-shadow: 0 4px 5px grey;
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto 0 30px;
+}
+
+.mail-drop li {
+    padding: 0 45px 0 5px;
+    list-style-type: none;
+}
+.mail-drop li:hover {
+    background: #eee;
+}
+
+.mail-input {
+    width: calc(100% - 70px);
+    position: relative;
+    margin: 10px 30px 10px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid grey;
+    outline:none;
+    font-size: 20px;
+}
+.mail-input:focus, .mail-button:hover {
+    border-bottom: 2px solid var(--active);
+}
+
+.mail-button:hover {
+    color: var(--active);
+}
+
+.inputfile + label {
+    margin-left: 30px;
+}
+
+.mail-area {
+    resize: none;
+}
+
+.result-div {
+    margin: 30px;
+    border: 2px solid grey;
+    padding: 5px;
+    font-size: 15px;
+    font-style: italic;
+    color: #aaa;
+}

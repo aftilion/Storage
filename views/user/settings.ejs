@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<% title = 'Склад ИС'; links=['/css/table.css', '/css/inputs.css', '/css/settings.css']%>
+<%- include('../templates/head');%>
+<body>
+<%- include('../templates/aside')%>
+<div class="workspace">
+    <%- include('../templates/nav')%>
+    <main>
+        <div class="settings-header">
+            <img src="/img/pic.jpg">
+            <div class="setting-mail-holder">
+                <span class="settings-header-name"><%=user.name%></span>
+                <span class="settings-header-email"><%=user.email%></span>
+            </div>
+        </div>
+        <form class="setting-form" action="/user/email" method="post">
+            <span class="setting-head">Сменить почту</span>
+            <div>
+                <span class="icon-container">&#xe800;</span>
+                <label for="mail">
+                    <input name="newEmail" id="mail" placeholder="новая почта" type="email" class="beaut-input">
+                </label>
+            </div>
+            <div>
+                <span class="icon-container">&#xe800;</span>
+                <label for="re-mail">
+                    <input name="reNewEmail" id="re-mail" placeholder="повторить почту" type="email" class="beaut-input">
+                </label>
+            </div>
+            <div>
+                <span class="icon-container">&#xe801;</span>
+                <label for="password">
+                    <input name="oldPassword" id="password" placeholder="старый пароль" type="password" class="beaut-input">
+                </label>
+            </div>
+            <button class="beaut-button">Сохранить</button>
+
+        </form>
+        <form class="setting-form" action="/user/password" method="post">
+            <span class="setting-head">Сменить пароль</span>
+            <div>
+                <span class="icon-container">&#xe801;</span>
+                <label for="password">
+                    <input name="oldPassword" id="password" placeholder="старый пароль" type="password" class="beaut-input">
+                </label>
+            </div>
+            <div>
+                <span class="icon-container">&#xe801;</span>
+                <label for="new-password">
+                    <input name="newPassword" id="new-password" placeholder="новый пароль" type="password" class="beaut-input">
+                </label>
+            </div>
+            <div>
+                <span class="icon-container">&#xe801;</span>
+                <label for="re-new-password">
+                    <input name="reNewPassword" id="re-new-password" placeholder="повторить новый пароль" type="password" class="beaut-input">
+                </label>
+            </div>
+            <button class="beaut-button">Сохранить</button>
+
+        </form>
+    </main>
+    <%- include('../templates/footer')%>
+</div>
+<script src="/js/ham.js"></script>
+</body>
+</html>

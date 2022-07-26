@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background: url('/img/background.jpg') no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 360px;
+    height: 400px;
+    margin: auto;
+    align-items: center;
+    box-shadow: 0 0 5px grey;
+    border-radius: 10px;
+    background: white;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 96%;
+    height: 120px;
+    background: var(--main);
+    margin: -40px auto 10px;
+    box-shadow: 0 0 1px grey;
+    border-radius: 5px;
+    font-family: Philosopher sans-serif;
+    font-size:60px;
+    text-align: center;
+    color: white;
+}
+
+.main-form {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 100%;
+        height: 100%;
+    }
+}

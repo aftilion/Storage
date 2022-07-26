@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("HEROKU_POSTGRESQL_MAROON_URL")
+}
+
+model Permission {
+  id    Int    @id @default(autoincrement())
+  name  String
+  roles Role[] @relation(references: [id])
+  Mail  Mail?
+}
+
+model Role {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  permissions Permission[] @relation(references: [id])
+  users       User[]
+  items       Item[]
+  invites     InviteLink[] @relation(references: [link])
+}
+
+model InviteLink {
+  link  String @id @unique
+  name  String
+  roles Role[] @relation(references: [id])
+}
+
+model User {
+  uid          String         @id @unique
+  isFrozen     Boolean        @default(false)
+  name         String
+  roles        Role[]
+  Notification Notification[]
+}
+
+model Item {
+  id          Int      @id @default(autoincrement())
+
+  name        String
+  link        String
+  description String?
+  worksUntil  DateTime
+  place       String?
+  whiteList   Role[]
+}
+
+model Mail {
+  id           Int        @id @default(autoincrement())
+  host         String
+  name         String
+  mail         String     @unique
+  password     String
+  permission   Permission @relation(references: [id], fields: [permissionId])
+  permissionId Int        @unique
+}
+
+model Notification {
+  id          Int    @id @default(autoincrement())
+  uid         User   @relation(fields: [userUid], references: [uid])
+  status      Int
+  name        String
+  description String
+  userUid     String
+}

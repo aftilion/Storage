@@ -1,0 +1,35 @@
+<%if (users) {%>
+<div class="table-container">
+    <div class="table-header">
+        Пользователи
+    </div>
+    <div class="table-body">
+        <table class="main-table">
+            <thead>
+            <tr>
+                <td>№</td>
+                <td>Имя</td>
+                <td>uid</td>
+                <td>заморозить</td>
+            </tr>
+            </thead>
+            <tbody>
+            <%i=1;%>
+            <%users.forEach((element) => {%>
+            <tr>
+                <form method="put" action="/user/:id">
+                    <td><%=i%></td>
+                    <td><input name="name" value="<%=element.name%>" oninput="changeName(this, '/user/<%=element.uid%>')" placeholder="Имя" class="beaut-input"></td>
+                    <td><%=element.uid%></td>
+                    <td><input type="checkbox" onchange="froze(this, '/user/<%=element.uid%>')" <%=element.isFrozen? 'checked':''%>></td>
+                    <td><span class="icons" onclick="removeLink('/user/<%=element.uid%>')">&#xF1F8;</span></td>
+                </form>
+            </tr>
+
+            <%i++;
+            });%>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%}%>

@@ -1,0 +1,50 @@
+.settings-header {
+    background: white;
+    display: flex;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid #99999955;
+}
+
+.settings-header img {
+    margin: 10px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.setting-mail-holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-header-name {
+    position: relative;
+    margin: 10px auto 0 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: lightgray;
+}
+
+.settings-header-email {
+    margin: 0 auto 0 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: gray;
+}
+
+.setting-form {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #99999955;
+}
+
+.setting-head {
+    margin: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-color);
+}
